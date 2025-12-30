@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fun Moments - Social Wall</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;family=Caveat:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#fa5c38",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#23130f",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#34201c",
+                        "text-main-light": "#1c0f0d",
+                        "text-main-dark": "#fcf9f8",
+                        "text-secondary-light": "#9e5747",
+                        "text-secondary-dark": "#d1aca4",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "handwriting": ["Caveat", "cursive"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for horizontal chips */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Polaroid Effect */
+        .polaroid-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main-light dark:text-text-main-dark transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-background-light dark:bg-background-dark overflow-x-hidden shadow-2xl">
+<!-- Header -->
+<header class="sticky top-0 z-30 flex items-center bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md px-4 py-3 justify-between border-b border-primary/10 dark:border-white/5">
+<a href="index.html" class="flex size-10 shrink-0 items-center justify-center rounded-full active:bg-black/5 dark:active:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-text-main-light dark:text-text-main-dark">arrow_back</span>
+</a>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Fun Moments 📸</h2>
+<button class="flex size-10 items-center justify-center rounded-full bg-transparent hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-primary">
+<span class="material-symbols-outlined filled">filter_list</span>
+</button>
+</header>
+<main class="flex-1 flex flex-col gap-6 pb-28">
+<!-- Hero CTA Card -->
+<div class="px-4 pt-4">
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-[#fff0ec] to-[#ffe4de] dark:from-[#34201c] dark:to-[#2a1714] p-5 shadow-sm border border-primary/10">
+<!-- Decorative Circle -->
+<div class="absolute -right-6 -top-6 w-32 h-32 rounded-full bg-primary/10 blur-2xl"></div>
+<div class="flex items-center justify-between gap-4 relative z-10">
+<div class="flex flex-col gap-2 flex-1">
+<div class="flex flex-col">
+<span class="inline-flex items-center gap-1 text-[10px] font-bold tracking-widest uppercase text-primary mb-1">
+<span class="material-symbols-outlined text-[14px]">stars</span>
+                                    Contest Alert
+                                </span>
+<h3 class="text-lg font-bold leading-tight">Win a Monthly Pass! 🎟️</h3>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium mt-1">Share your smile for a chance to win.</p>
+</div>
+<button class="mt-2 flex items-center justify-center rounded-full h-9 px-5 bg-white dark:bg-primary text-primary dark:text-white text-sm font-bold shadow-sm w-fit active:scale-95 transition-transform">
+                                Learn More
+                            </button>
+</div>
+<div class="w-24 h-24 shrink-0 rounded-lg bg-cover bg-center shadow-inner rotate-3 border-2 border-white dark:border-white/10" data-alt="Happy child holding a large colorful lollipop in amusement park" style='background-image: url("assets/images/image_14.jpg");'>
+</div>
+</div>
+</div>
+</div>
+<!-- Chips Filter -->
+<div class="w-full overflow-x-auto hide-scrollbar pl-4">
+<div class="flex gap-2 pr-4 w-max">
+<button class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-primary text-white px-5 shadow-sm shadow-primary/20 transition-all active:scale-95">
+<span class="text-sm font-bold">All</span>
+</button>
+<button class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-surface-dark border border-gray-100 dark:border-white/5 px-5 transition-all active:scale-95">
+<span class="text-sm font-medium">Rides 🎢</span>
+</button>
+<button class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-surface-dark border border-gray-100 dark:border-white/5 px-5 transition-all active:scale-95">
+<span class="text-sm font-medium">Yummy Food 🍦</span>
+</button>
+<button class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-surface-dark border border-gray-100 dark:border-white/5 px-5 transition-all active:scale-95">
+<span class="text-sm font-medium">Shows 🎭</span>
+</button>
+</div>
+</div>
+<!-- Masonry Grid (Simulated with columns) -->
+<div class="columns-2 gap-3 px-3 space-y-3 pb-4">
+<!-- Polaroid Item 1 -->
+<div class="break-inside-avoid relative bg-white dark:bg-surface-dark p-2 pb-3 rounded-lg shadow-[0_2px_8px_-2px_rgba(0,0,0,0.1)] hover:shadow-lg transition-shadow duration-300">
+<div class="relative aspect-[4/5] w-full overflow-hidden rounded-md bg-gray-100 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center transition-transform hover:scale-110 duration-700" data-alt="Two kids laughing on a carousel horse" style='background-image: url("assets/images/image_15.jpg");'>
+</div>
+<div class="absolute top-2 right-2 flex flex-col items-center">
+<button class="bg-black/20 backdrop-blur-sm p-1.5 rounded-full text-white hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[16px] block" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+</div>
+<div class="pt-3 px-1">
+<p class="font-handwriting text-xl text-text-main-light dark:text-text-main-dark leading-none rotate-[-1deg]">Best birthday! 🎂</p>
+<p class="text-[10px] text-text-secondary-light dark:text-text-secondary-dark mt-1 font-medium">@SarahM_92</p>
+</div>
+</div>
+<!-- Polaroid Item 2 -->
+<div class="break-inside-avoid relative bg-white dark:bg-surface-dark p-2 pb-3 rounded-lg shadow-[0_2px_8px_-2px_rgba(0,0,0,0.1)] hover:shadow-lg transition-shadow duration-300 mt-6">
+<div class="relative aspect-square w-full overflow-hidden rounded-md bg-gray-100 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center transition-transform hover:scale-110 duration-700" data-alt="Close up of pink cotton candy against blue sky" style='background-image: url("assets/images/image_16.jpg");'>
+</div>
+<div class="absolute top-2 right-2">
+<button class="bg-black/20 backdrop-blur-sm p-1.5 rounded-full text-white/80 hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[16px] block">favorite</span>
+</button>
+</div>
+</div>
+<div class="pt-3 px-1">
+<p class="font-handwriting text-xl text-text-main-light dark:text-text-main-dark leading-none rotate-[1deg]">Sugar rush! 🍭</p>
+<p class="text-[10px] text-text-secondary-light dark:text-text-secondary-dark mt-1 font-medium">@MikeyLikesIt</p>
+</div>
+</div>
+<!-- Polaroid Item 3 -->
+<div class="break-inside-avoid relative bg-white dark:bg-surface-dark p-2 pb-3 rounded-lg shadow-[0_2px_8px_-2px_rgba(0,0,0,0.1)] hover:shadow-lg transition-shadow duration-300">
+<div class="relative aspect-[3/4] w-full overflow-hidden rounded-md bg-gray-100 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center transition-transform hover:scale-110 duration-700" data-alt="Family selfie with a giant plush bear mascot" style='background-image: url("assets/images/image_17.jpg");'>
+</div>
+<div class="absolute top-2 right-2">
+<button class="bg-black/20 backdrop-blur-sm p-1.5 rounded-full text-white/80 hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[16px] block">favorite</span>
+</button>
+</div>
+</div>
+<div class="pt-3 px-1">
+<p class="font-handwriting text-xl text-text-main-light dark:text-text-main-dark leading-none rotate-[-2deg]">Meeting Teddy!</p>
+<p class="text-[10px] text-text-secondary-light dark:text-text-secondary-dark mt-1 font-medium">@TheWilsons</p>
+</div>
+</div>
+<!-- Polaroid Item 4 -->
+<div class="break-inside-avoid relative bg-white dark:bg-surface-dark p-2 pb-3 rounded-lg shadow-[0_2px_8px_-2px_rgba(0,0,0,0.1)] hover:shadow-lg transition-shadow duration-300">
+<div class="relative aspect-square w-full overflow-hidden rounded-md bg-gray-100 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center transition-transform hover:scale-110 duration-700" data-alt="Excited child splashing in water park zone" style='background-image: url("assets/images/image_18.jpg");'>
+</div>
+<div class="absolute top-2 right-2">
+<button class="bg-black/20 backdrop-blur-sm p-1.5 rounded-full text-white hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[16px] block" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+</div>
+<div class="pt-3 px-1">
+<p class="font-handwriting text-xl text-text-main-light dark:text-text-main-dark leading-none rotate-[2deg]">Splash zone 💦</p>
+<p class="text-[10px] text-text-secondary-light dark:text-text-secondary-dark mt-1 font-medium">@AquaKid</p>
+</div>
+</div>
+<!-- Polaroid Item 5 -->
+<div class="break-inside-avoid relative bg-white dark:bg-surface-dark p-2 pb-3 rounded-lg shadow-[0_2px_8px_-2px_rgba(0,0,0,0.1)] hover:shadow-lg transition-shadow duration-300">
+<div class="relative aspect-[3/4] w-full overflow-hidden rounded-md bg-gray-100 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center transition-transform hover:scale-110 duration-700" data-alt="POV shot from a roller coaster looking down" style='background-image: url("assets/images/image_19.jpg");'>
+</div>
+<div class="absolute top-2 right-2">
+<button class="bg-black/20 backdrop-blur-sm p-1.5 rounded-full text-white/80 hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[16px] block">favorite</span>
+</button>
+</div>
+</div>
+<div class="pt-3 px-1">
+<p class="font-handwriting text-xl text-text-main-light dark:text-text-main-dark leading-none rotate-[0deg]">Soooo high! 🦅</p>
+<p class="text-[10px] text-text-secondary-light dark:text-text-secondary-dark mt-1 font-medium">@AdrenalineJunkie</p>
+</div>
+</div>
+<!-- Polaroid Item 6 -->
+<div class="break-inside-avoid relative bg-white dark:bg-surface-dark p-2 pb-3 rounded-lg shadow-[0_2px_8px_-2px_rgba(0,0,0,0.1)] hover:shadow-lg transition-shadow duration-300">
+<div class="relative aspect-[4/5] w-full overflow-hidden rounded-md bg-gray-100 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center transition-transform hover:scale-110 duration-700" data-alt="Kid wearing pirate hat holding a map" style='background-image: url("assets/images/image_20.jpg");'>
+</div>
+<div class="absolute top-2 right-2">
+<button class="bg-black/20 backdrop-blur-sm p-1.5 rounded-full text-white/80 hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[16px] block">favorite</span>
+</button>
+</div>
+</div>
+<div class="pt-3 px-1">
+<p class="font-handwriting text-xl text-text-main-light dark:text-text-main-dark leading-none rotate-[-1deg]">Treasure hunt 🏴‍☠️</p>
+<p class="text-[10px] text-text-secondary-light dark:text-text-secondary-dark mt-1 font-medium">@JackSparrowJr</p>
+</div>
+</div>
+</div>
+<!-- Loading/End State -->
+<div class="flex flex-col items-center justify-center py-6 text-center opacity-60">
+<span class="material-symbols-outlined text-4xl text-primary animate-bounce">expand_more</span>
+<p class="text-xs mt-2 font-medium">Scroll for more smiles</p>
+</div>
+</main>
+<!-- Floating Action Button Area -->
+<div class="fixed bottom-6 left-0 right-0 flex justify-center z-40 px-6 pointer-events-none">
+<div class="flex flex-col items-center gap-2 pointer-events-auto w-full max-w-[480px]">
+<!-- Content Moderation Note -->
+<div class="bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-sm px-3 py-1 rounded-full border border-gray-200 dark:border-white/10 shadow-sm">
+<p class="text-[10px] text-text-secondary-light dark:text-text-secondary-dark font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">verified_user</span>
+                        Photos are reviewed before posting
+                    </p>
+</div>
+<button class="group relative flex w-full items-center justify-center overflow-hidden rounded-full h-14 bg-primary text-white shadow-[0_8px_20px_rgba(250,92,56,0.4)] hover:shadow-[0_12px_24px_rgba(250,92,56,0.5)] hover:-translate-y-1 transition-all active:scale-95 active:shadow-sm">
+<!-- Shine Effect -->
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[24px]">add_a_photo</span>
+<span class="text-base font-bold tracking-wide uppercase">Upload Your Memory</span>
+</div>
+</button>
+</div>
+</div>
+</div>
+</body></html>

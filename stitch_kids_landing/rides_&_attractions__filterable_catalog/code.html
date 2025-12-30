@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fun World Kids - Rides</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff5833",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#23130f",
+                        "card-light": "#ffffff",
+                        "card-dark": "#2a1d1a",
+                        "text-main-light": "#1d0f0c",
+                        "text-main-dark": "#fcf9f8",
+                        "text-sub-light": "#a15645",
+                        "text-sub-dark": "#dcbdb6",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem", 
+                        "xl": "2rem",
+                        "2xl": "2.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-text-main-light dark:text-text-main-dark">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden pb-24">
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-black/5 dark:border-white/5">
+<div class="flex items-center p-4 pb-2 justify-between">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full active:bg-black/5 dark:active:bg-white/10">
+<span class="material-symbols-outlined text-[28px]">menu</span>
+</button>
+<h2 class="text-xl font-bold leading-tight tracking-tight text-center flex-1">Explore the Fun</h2>
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</button>
+</div>
+<!-- Scrollable Filter Bar -->
+<div class="flex gap-3 px-4 py-3 overflow-x-auto no-scrollbar items-center">
+<!-- Filter Button 1 -->
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-card-dark px-4 shadow-sm active:scale-95 transition-transform">
+<p class="text-sm font-semibold">Thrill Level</p>
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</button>
+<!-- Filter Button 2 -->
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-card-dark px-4 shadow-sm active:scale-95 transition-transform">
+<p class="text-sm font-semibold">Height</p>
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</button>
+<!-- Filter Button 3 -->
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-card-dark px-4 shadow-sm active:scale-95 transition-transform">
+<p class="text-sm font-semibold">Zone</p>
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</button>
+<!-- Filter Button 4 -->
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-card-dark px-4 shadow-sm active:scale-95 transition-transform">
+<p class="text-sm font-semibold">Water Rides</p>
+<span class="material-symbols-outlined text-[20px]">water_drop</span>
+</button>
+</div>
+</header>
+<!-- Active Filter Chips -->
+<div class="flex gap-2 px-4 py-2 flex-wrap">
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-1.5 rounded-full bg-primary/10 dark:bg-primary/20 pl-2 pr-3 border border-primary/20">
+<button class="flex items-center justify-center rounded-full p-0.5 hover:bg-primary/20">
+<span class="material-symbols-outlined text-[18px] text-primary">close</span>
+</button>
+<p class="text-primary text-xs font-bold uppercase tracking-wide">Family</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-1.5 rounded-full bg-primary/10 dark:bg-primary/20 pl-2 pr-3 border border-primary/20">
+<button class="flex items-center justify-center rounded-full p-0.5 hover:bg-primary/20">
+<span class="material-symbols-outlined text-[18px] text-primary">close</span>
+</button>
+<p class="text-primary text-xs font-bold uppercase tracking-wide">Fantasyland</p>
+</div>
+</div>
+<!-- Masonry Grid Content -->
+<main class="w-full px-4 pt-2">
+<!-- columns-2 creates the masonry effect, gap-4 spacing -->
+<div class="columns-2 gap-4 space-y-4">
+<!-- Card 1: Hyper-Coaster -->
+<div class="break-inside-avoid relative flex flex-col gap-3 rounded-[1.5rem] bg-card-light dark:bg-card-dark p-2 shadow-sm border border-black/5 dark:border-white/5 group">
+<div class="relative w-full overflow-hidden rounded-[1.2rem]">
+<div class="absolute top-3 left-3 z-10 flex items-center gap-1 rounded-full bg-primary px-2.5 py-1 text-white shadow-md">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span class="text-xs font-bold">45 min</span>
+</div>
+<button class="absolute top-3 right-3 z-10 flex size-8 items-center justify-center rounded-full bg-white/90 text-primary shadow-sm backdrop-blur-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px] fill-current">favorite</span>
+</button>
+<div class="aspect-[3/4] w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Looping orange rollercoaster against blue sky" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCKtAjSZ7woMwCr62-7Mb1L2icW5TUOQreN--IdulAQTj74cF_GwY89MqadttoqLg8bc__Da9-PtO39Fy4MG5_XnLMdY63_R_2H9dmjEaSTuNOWH_o64R-ac2eDG30-eU9UHVlp7qyIdU9YSylRIm2kVxBkPg0qpsrbONAnJSdi6QX8zZIcud3finPuMUgdCcMuxBbnyY289XI_Kmy8hIRF_HEPp0a0H0iIC5_p3zgItAgl-iqX8rmw06AQVJ83P1lSE9jpQI62lP8');">
+</div>
+</div>
+<div class="px-1 pb-2">
+<h3 class="text-base font-bold leading-tight">Hyper-Coaster</h3>
+<div class="mt-1 flex flex-wrap gap-1 text-xs text-text-sub-light dark:text-text-sub-dark font-medium">
+<span>High Thrill</span>
+<span>•</span>
+<span>48in min</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Tea Cups -->
+<div class="break-inside-avoid relative flex flex-col gap-3 rounded-[1.5rem] bg-card-light dark:bg-card-dark p-2 shadow-sm border border-black/5 dark:border-white/5 group">
+<div class="relative w-full overflow-hidden rounded-[1.2rem]">
+<div class="absolute top-3 left-3 z-10 flex items-center gap-1 rounded-full bg-green-500 px-2.5 py-1 text-white shadow-md">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+<span class="text-xs font-bold">5 min</span>
+</div>
+<button class="absolute top-3 right-3 z-10 flex size-8 items-center justify-center rounded-full bg-white/90 text-gray-400 shadow-sm backdrop-blur-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<div class="aspect-[4/3] w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Pastel colored spinning tea cups ride" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC0Icev50q1MrrU1RIEuJ6kp45fQERPkkxcqSUeHa_mRDfk6CD30kfjkm4AbzXnpjVnz8jm8-9szlryy5BQ0kyJeBhNF3BxVwW6GUr0exNr74fl8T32jeywXEFoaDVSuw8SD2lAhWyoOXo8y4_mtumlSL6CxqcRqw0nCLjaCfxWk4Z3o6Bx6fjQOViJSRSX4aYTlHdlVmhZ1fHnYrOudG7uvQ1ddryY7UQm9cAbVhDk9XzCcWGupkhwENLsYMLyxTcWcSWcPdBiU1s');">
+</div>
+</div>
+<div class="px-1 pb-2">
+<h3 class="text-base font-bold leading-tight">Tea Cups</h3>
+<div class="mt-1 flex flex-wrap gap-1 text-xs text-text-sub-light dark:text-text-sub-dark font-medium">
+<span>Family</span>
+<span>•</span>
+<span>No min</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Dino-Adventure -->
+<div class="break-inside-avoid relative flex flex-col gap-3 rounded-[1.5rem] bg-card-light dark:bg-card-dark p-2 shadow-sm border border-black/5 dark:border-white/5 group">
+<div class="relative w-full overflow-hidden rounded-[1.2rem]">
+<div class="absolute top-3 left-3 z-10 flex items-center gap-1 rounded-full bg-primary px-2.5 py-1 text-white shadow-md">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span class="text-xs font-bold">15 min</span>
+</div>
+<button class="absolute top-3 right-3 z-10 flex size-8 items-center justify-center rounded-full bg-white/90 text-gray-400 shadow-sm backdrop-blur-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<div class="aspect-[1/1] w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Large animatronic dinosaur head in jungle setting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDObnuXmc6dZDBDoowrfxk5eM2zVqwx8o1EuE9576rwObk2tPZCX1bLiNqgpd41MQe5_zyn7Pthu2-SaNVm47jNQ22yi4XgAMFMFyjwZmRCFLdEyy1X0M-RTIMp023sjIaZ57DPBVeeTfeBh7lCH0ZTcMGWqIKy7YZ66OM3XX_LggTsSQPT1V1H3_iRBs9DTuB11erC4Yja2cLd1CVAyHHZENB9YDCcWcZJYkZtio_3F5Rx0AUovKSIxLfYlG7knnLYX_TWaCB2hFY');">
+</div>
+</div>
+<div class="px-1 pb-2">
+<h3 class="text-base font-bold leading-tight">Dino-Adventure</h3>
+<div class="mt-1 flex flex-wrap gap-1 text-xs text-text-sub-light dark:text-text-sub-dark font-medium">
+<span>Kids</span>
+<span>•</span>
+<span>36in min</span>
+</div>
+</div>
+</div>
+<!-- Card 4: Sky Drop -->
+<div class="break-inside-avoid relative flex flex-col gap-3 rounded-[1.5rem] bg-card-light dark:bg-card-dark p-2 shadow-sm border border-black/5 dark:border-white/5 group">
+<div class="relative w-full overflow-hidden rounded-[1.2rem]">
+<div class="absolute top-3 left-3 z-10 flex items-center gap-1 rounded-full bg-primary px-2.5 py-1 text-white shadow-md">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span class="text-xs font-bold">30 min</span>
+</div>
+<button class="absolute top-3 right-3 z-10 flex size-8 items-center justify-center rounded-full bg-white/90 text-gray-400 shadow-sm backdrop-blur-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<div class="aspect-[3/5] w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Tall drop tower ride silhouetted against sky" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBhEs3b07LEQ8Zxsd3pX4uO0j7AL9gvE9HiiLmo19-EyWXbhkrvwmGWi1pLG9zqHZFmSMgJ7LoUjkwuS1kl3gOPgre1tdgNJObQ-fgAwHYbo6yL5RGbU8NzddqG_NsivExlcivstsde3MtQu-kd6amE9NjiXIVusss59N31HI0YpHYqfnz_AXB4qtE7fAHBuentihG1KoFvEH7KYMCNSOy-pmKOOFTuPFwzFGE2h-KayEMcxUfcoIn87IX25_RQy-zX5FtvAN9k9Zc');">
+</div>
+</div>
+<div class="px-1 pb-2">
+<h3 class="text-base font-bold leading-tight">Sky Drop</h3>
+<div class="mt-1 flex flex-wrap gap-1 text-xs text-text-sub-light dark:text-text-sub-dark font-medium">
+<span>High Thrill</span>
+<span>•</span>
+<span>52in min</span>
+</div>
+</div>
+</div>
+<!-- Card 5: River Rapids -->
+<div class="break-inside-avoid relative flex flex-col gap-3 rounded-[1.5rem] bg-card-light dark:bg-card-dark p-2 shadow-sm border border-black/5 dark:border-white/5 group">
+<div class="relative w-full overflow-hidden rounded-[1.2rem]">
+<!-- Closed State Overlay -->
+<div class="absolute inset-0 bg-black/40 z-[5] flex items-center justify-center">
+<span class="bg-black/60 text-white text-xs font-bold px-3 py-1 rounded-full backdrop-blur-md border border-white/20">CLOSED</span>
+</div>
+<div class="absolute top-3 left-3 z-10 flex items-center gap-1 rounded-full bg-gray-600 px-2.5 py-1 text-white shadow-md opacity-0">
+<!-- Hidden wait time badge for layout consistency if needed, or just remove -->
+</div>
+<button class="absolute top-3 right-3 z-10 flex size-8 items-center justify-center rounded-full bg-white/90 text-gray-400 shadow-sm backdrop-blur-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<div class="aspect-[1/1] w-full bg-cover bg-center grayscale transition-transform duration-500 group-hover:scale-105" data-alt="Water splashing in a river rapids ride" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAkKgDZByYKMswnDkq3zPLMEGw_-N5pKYTTBd8xXE_kGTbD_tvvmrWwScFrWeKig0sA73wTXVltY6ugXqOt7yl0_RKIjh-0BArW3Ewk_SA7QlJ3G-VUx_jI8Mizoy7imBAidvcfvoRO61rBxvnfGlBJCv6kJDrcKuRz5FBnE4UnmwzTagClcg-OPPWpoeBIuAEwcr1-zoUo3z-arww2j2_qh8Md6zOX48FdpbJMatOWJWn6S3c3N-D3OLWjh5kJJXp48oetb-eIbEk');">
+</div>
+</div>
+<div class="px-1 pb-2">
+<h3 class="text-base font-bold leading-tight text-gray-500">River Rapids</h3>
+<div class="mt-1 flex flex-wrap gap-1 text-xs text-gray-400 font-medium">
+<span>Family</span>
+<span>•</span>
+<span>42in min</span>
+</div>
+</div>
+</div>
+<!-- Card 6: Carousel -->
+<div class="break-inside-avoid relative flex flex-col gap-3 rounded-[1.5rem] bg-card-light dark:bg-card-dark p-2 shadow-sm border border-black/5 dark:border-white/5 group">
+<div class="relative w-full overflow-hidden rounded-[1.2rem]">
+<div class="absolute top-3 left-3 z-10 flex items-center gap-1 rounded-full bg-primary px-2.5 py-1 text-white shadow-md">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span class="text-xs font-bold">10 min</span>
+</div>
+<button class="absolute top-3 right-3 z-10 flex size-8 items-center justify-center rounded-full bg-white/90 text-primary shadow-sm backdrop-blur-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px] fill-current">favorite</span>
+</button>
+<div class="aspect-[3/4] w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Brightly lit carousel horse at night" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBp4jqsTXFmFmx5_DLmA_yTMRd6kBZ5nQ70JVj7GMjMXcIGl6JAKybkuXtt89P3tohFjGi4G4p4uQMYECEckcHwd4Ml0tHGNf_LAf8wZjxnAmte8I2M8yJdB2uRbrGYszj6PudJVL7REzx9QU5tzHZzeon534Kn-ddrd2D5OulGBrwUMzmV3cedplm8Hsmgsrz1ZEvW9r_B5YtN47P-bzPNCQyORh6-jgpeaDrjRbDC5OhvTi2pBattzbPLxz-RjKIOaAQ3Nil9uYY');">
+</div>
+</div>
+<div class="px-1 pb-2">
+<h3 class="text-base font-bold leading-tight">Carousel</h3>
+<div class="mt-1 flex flex-wrap gap-1 text-xs text-text-sub-light dark:text-text-sub-dark font-medium">
+<span>Family</span>
+<span>•</span>
+<span>No min</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 w-full bg-card-light dark:bg-card-dark border-t border-black/5 dark:border-white/5 px-6 pb-6 pt-3 z-50 rounded-t-[1.5rem] shadow-[0_-5px_20px_rgba(0,0,0,0.05)]">
+<div class="flex justify-between items-end">
+<a class="group flex flex-col items-center gap-1 w-16" href="#">
+<div class="flex items-center justify-center p-1 rounded-full group-hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-[26px] text-primary fill-current">explore</span>
+</div>
+<span class="text-[10px] font-bold text-primary tracking-wide">Explore</span>
+</a>
+<a class="group flex flex-col items-center gap-1 w-16 opacity-60 hover:opacity-100 transition-opacity" href="#">
+<div class="flex items-center justify-center p-1 rounded-full group-hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-[26px] text-text-main-light dark:text-text-main-dark">map</span>
+</div>
+<span class="text-[10px] font-medium text-text-main-light dark:text-text-main-dark tracking-wide">Map</span>
+</a>
+<a class="group flex flex-col items-center gap-1 w-16 opacity-60 hover:opacity-100 transition-opacity" href="#">
+<div class="flex items-center justify-center p-1 rounded-full group-hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-[26px] text-text-main-light dark:text-text-main-dark">confirmation_number</span>
+</div>
+<span class="text-[10px] font-medium text-text-main-light dark:text-text-main-dark tracking-wide">Tickets</span>
+</a>
+<a class="group flex flex-col items-center gap-1 w-16 opacity-60 hover:opacity-100 transition-opacity" href="#">
+<div class="flex items-center justify-center p-1 rounded-full group-hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-[26px] text-text-main-light dark:text-text-main-dark">account_circle</span>
+</div>
+<span class="text-[10px] font-medium text-text-main-light dark:text-text-main-dark tracking-wide">Profile</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

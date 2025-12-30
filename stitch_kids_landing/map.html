@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Fun World Kids - Park Map</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Config -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0df20d",
+                        "background-light": "#f5f8f5",
+                        "background-dark": "#102210",
+                        "ui-white": "#ffffff",
+                        "ui-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "2xl": "2.5rem", "full": "9999px" },
+                    boxShadow: {
+                        "float": "0 10px 40px -10px rgba(0,0,0,0.15)",
+                        "glow": "0 0 20px rgba(13, 242, 13, 0.3)"
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Hide scrollbar for chrome/safari/opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        .map-pin {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display antialiased overflow-hidden h-screen w-full text-ui-dark dark:text-ui-white">
+    <!-- Main Container -->
+    <div class="relative w-full h-full flex flex-col">
+        <!-- LAYER 1: The Interactive Map (Background) -->
+        <div class="absolute inset-0 z-0 bg-[#87CEEB] overflow-hidden">
+            <!-- Simulated Large Map Canvas -->
+            <div class="absolute w-[200%] h-[200%] -top-[30%] -left-[40%]"
+                data-alt="Colorful illustrated theme park map with green zones and water features"
+                data-location="Fun World Kids"
+                style="background-image: url('assets/images/image_26.jpg'); background-size: cover; background-position: center;">
+                <!-- Map Overlay Gradient for readability at top -->
+                <div
+                    class="absolute top-0 w-full h-40 bg-gradient-to-b from-white/60 to-transparent pointer-events-none">
+                </div>
+                <!-- Interactive Pins (Simulated positions) -->
+                <!-- Pin 1: Thunder Mountain (Active) -->
+                <button class="absolute top-[45%] left-[55%] flex flex-col items-center group map-pin">
+                    <div
+                        class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-md mb-2 border border-white/50">
+                        <span class="text-xs font-bold text-gray-800">15 min</span>
+                    </div>
+                    <div
+                        class="w-12 h-12 bg-primary rounded-full shadow-glow border-4 border-white flex items-center justify-center transform group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-black font-bold">roller_skating</span>
+                    </div>
+                </button>
+                <!-- Pin 2: Dining -->
+                <button
+                    class="absolute top-[35%] left-[35%] flex flex-col items-center group transition-transform hover:scale-110">
+                    <div
+                        class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-md mb-2 border border-white/50">
+                        <span class="text-xs font-bold text-gray-800">No Wait</span>
+                    </div>
+                    <div
+                        class="w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600">
+                        <span class="material-symbols-outlined text-xl">restaurant</span>
+                    </div>
+                </button>
+                <!-- Pin 3: Kids Area -->
+                <button
+                    class="absolute top-[55%] left-[65%] flex flex-col items-center group transition-transform hover:scale-110">
+                    <div
+                        class="w-10 h-10 bg-[#FF69B4] border-4 border-white rounded-full shadow-lg flex items-center justify-center text-white">
+                        <span class="material-symbols-outlined text-xl">child_care</span>
+                    </div>
+                </button>
+                <!-- Pin 4: Castle -->
+                <button
+                    class="absolute top-[40%] left-[50%] flex flex-col items-center group transition-transform hover:scale-110">
+                    <div
+                        class="w-14 h-14 bg-[#8A2BE2] border-4 border-white rounded-full shadow-lg flex items-center justify-center text-white">
+                        <span class="material-symbols-outlined text-2xl">castle</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <!-- LAYER 2: UI Overlays -->
+        <!-- Top Section: Search, Status, Filter -->
+        <div class="absolute top-0 left-0 right-0 z-20 flex flex-col pointer-events-none">
+            <!-- Header Row -->
+            <div class="pt-12 px-4 pb-2 flex items-center gap-3 pointer-events-auto">
+                <!-- Search Bar -->
+                <div
+                    class="flex-1 h-12 bg-white rounded-full shadow-lg flex items-center px-4 gap-2 transition-all focus-within:ring-2 focus-within:ring-primary">
+                    <span class="material-symbols-outlined text-gray-400">search</span>
+                    <input
+                        class="flex-1 bg-transparent border-none focus:ring-0 text-gray-800 placeholder-gray-400 text-sm font-medium"
+                        placeholder="Search attractions, food..." type="text" />
+                </div>
+                <!-- Status Pill (Capacity) -->
+                <div
+                    class="h-12 w-12 rounded-full bg-white shadow-lg flex items-center justify-center relative flex-shrink-0">
+                    <span class="material-symbols-outlined text-gray-700">notifications</span>
+                    <div class="absolute top-3 right-3 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white"></div>
+                </div>
+            </div>
+            <!-- Filter Chips Row -->
+            <div class="px-4 py-2 pointer-events-auto overflow-x-auto no-scrollbar w-full">
+                <div class="flex gap-2 w-max">
+                    <!-- Capacity Chip -->
+                    <div
+                        class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-ui-dark text-white pl-4 pr-4 shadow-md">
+                        <span class="w-2 h-2 rounded-full bg-primary"></span>
+                        <p class="text-xs font-bold leading-normal">Open until 9 PM</p>
+                    </div>
+                    <!-- Filter: Rides -->
+                    <button
+                        class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-primary pl-4 pr-4 shadow-md border border-white/20">
+                        <span class="material-symbols-outlined text-base text-black">attractions</span>
+                        <p class="text-black text-sm font-bold leading-normal">Rides</p>
+                    </button>
+                    <!-- Filter: Dining -->
+                    <button
+                        class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-white pl-4 pr-4 shadow-md">
+                        <span class="material-symbols-outlined text-base text-gray-600">restaurant</span>
+                        <p class="text-gray-800 text-sm font-medium leading-normal">Dining</p>
+                    </button>
+                    <!-- Filter: Shows -->
+                    <button
+                        class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-white pl-4 pr-4 shadow-md">
+                        <span class="material-symbols-outlined text-base text-gray-600">theater_comedy</span>
+                        <p class="text-gray-800 text-sm font-medium leading-normal">Shows</p>
+                    </button>
+                    <!-- Filter: Restrooms -->
+                    <button
+                        class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-white pl-4 pr-4 shadow-md">
+                        <span class="material-symbols-outlined text-base text-gray-600">wc</span>
+                        <p class="text-gray-800 text-sm font-medium leading-normal">Restrooms</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Right Side: Zoom Controls -->
+        <div class="absolute right-4 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-3 pointer-events-auto">
+            <div class="flex flex-col bg-white rounded-full shadow-float overflow-hidden">
+                <button class="p-3 hover:bg-gray-50 flex items-center justify-center active:bg-gray-100">
+                    <span class="material-symbols-outlined text-gray-700">add</span>
+                </button>
+                <div class="h-[1px] bg-gray-100 w-full"></div>
+                <button class="p-3 hover:bg-gray-50 flex items-center justify-center active:bg-gray-100">
+                    <span class="material-symbols-outlined text-gray-700">remove</span>
+                </button>
+            </div>
+            <button
+                class="p-3 bg-white rounded-full shadow-float hover:bg-gray-50 flex items-center justify-center active:bg-gray-100">
+                <span class="material-symbols-outlined text-blue-500">near_me</span>
+            </button>
+        </div>
+        <!-- Bottom Sheet Area -->
+        <div class="absolute bottom-0 left-0 right-0 z-30 pb-28 px-4 pointer-events-none flex flex-col justify-end">
+            <!-- Selected Attraction Card -->
+            <div
+                class="pointer-events-auto bg-white rounded-2xl shadow-float p-4 mb-4 transform transition-all animate-in slide-in-from-bottom-10 fade-in duration-300">
+                <div class="flex gap-4">
+                    <!-- Text Info -->
+                    <div class="flex-1 flex flex-col gap-1">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="text-lg font-extrabold text-gray-900 leading-tight">Thunder Mountain</h3>
+                                <p class="text-gray-500 text-sm">Adventure Bay Area</p>
+                            </div>
+                            <button class="text-gray-300 hover:text-red-500 transition-colors">
+                                <span class="material-symbols-outlined">favorite</span>
+                            </button>
+                        </div>
+                        <!-- Stats Row -->
+                        <div class="flex items-center gap-3 mt-2">
+                            <div class="flex items-center gap-1 bg-green-50 px-2 py-1 rounded-lg">
+                                <span class="material-symbols-outlined text-green-600 text-sm">schedule</span>
+                                <span class="text-green-700 font-bold text-sm">15 min</span>
+                            </div>
+                            <div class="flex items-center gap-1 px-2 py-1">
+                                <span class="material-symbols-outlined text-gray-400 text-sm">escalator_warning</span>
+                                <span class="text-gray-600 text-sm font-medium">Ages 7+</span>
+                            </div>
+                        </div>
+                        <!-- Actions -->
+                        <div class="flex gap-2 mt-4">
+                            <a href="booking.html" class="flex-1 bg-primary hover:bg-[#0be00b] text-black h-10 rounded-full font-bold text-sm flex items-center justify-center gap-2 shadow-[0_4px_10px_rgba(13,242,13,0.3)] transition-all active:scale-95"><span class="material-symbols-outlined text-lg">confirmation_number</span>Fast Pass</a>
+                            <button
+                                class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-50 transition-colors">
+                                <span class="material-symbols-outlined">directions</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Attraction Image -->
+                    <div class="w-24 h-auto rounded-xl bg-gray-100 overflow-hidden shrink-0 relative">
+                        <div class="absolute inset-0 bg-cover bg-center"
+                            data-alt="Close up of a wooden roller coaster track against a blue sky"
+                            style="background-image: url('assets/images/image_27.jpg');">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Navigation Dock -->
+        <div
+            class="absolute bottom-8 left-1/2 -translate-x-1/2 z-40 bg-white/90 backdrop-blur-md border border-white/50 rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.12)] px-6 py-3 flex items-center gap-8 pointer-events-auto">
+            <a href="map.html" class="flex flex-col items-center justify-center gap-1 group">
+                <div
+                    class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center transition-colors group-hover:bg-primary/30">
+                    <span class="material-symbols-outlined text-black fill-current">map</span>
+                </div>
+                <span class="text-[10px] font-bold text-black">Map</span>
+            </a>
+            <a href="rides.html" class="flex flex-col items-center justify-center gap-1 group">
+                <div
+                    class="w-10 h-10 rounded-full bg-transparent flex items-center justify-center transition-colors group-hover:bg-gray-100">
+                    <span
+                        class="material-symbols-outlined text-gray-400 group-hover:text-gray-600">format_list_bulleted</span>
+                </div>
+                <span class="text-[10px] font-medium text-gray-400 group-hover:text-gray-600">List</span>
+            </a>
+            <a href="booking.html" class="flex flex-col items-center justify-center gap-1 group">
+                <div
+                    class="w-10 h-10 rounded-full bg-transparent flex items-center justify-center transition-colors group-hover:bg-gray-100">
+                    <span
+                        class="material-symbols-outlined text-gray-400 group-hover:text-gray-600">local_activity</span>
+                </div>
+                <span class="text-[10px] font-medium text-gray-400 group-hover:text-gray-600">Tickets</span>
+            </a>
+            <a href="dashboard.html" class="flex flex-col items-center justify-center gap-1 group">
+                <div
+                    class="w-10 h-10 rounded-full bg-transparent flex items-center justify-center transition-colors group-hover:bg-gray-100">
+                    <span class="material-symbols-outlined text-gray-400 group-hover:text-gray-600">person</span>
+                </div>
+                <span class="text-[10px] font-medium text-gray-400 group-hover:text-gray-600">Profile</span>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

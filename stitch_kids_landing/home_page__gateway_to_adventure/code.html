@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fun World Kids - Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&amp;family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f9f906",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#23230f",
+                        "text-main": "#1c1c0d",
+                        "text-muted": "#9e9e47",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                    boxShadow: {
+                        'pop': '0px 6px 0px 0px rgba(0,0,0,0.1)',
+                        'pop-hover': '0px 3px 0px 0px rgba(0,0,0,0.1)',
+                        'heavy': '0px 8px 0px 0px rgba(28, 28, 13, 0.15)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for clean horizontal scrolls */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-white antialiased selection:bg-primary selection:text-text-main pb-24">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 flex items-center bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md p-4 justify-between border-b border-black/5 dark:border-white/5 transition-colors duration-300">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-white dark:bg-white/10 shadow-sm text-text-main dark:text-white">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</div>
+<h2 class="text-text-main dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Fun World Kids</h2>
+<div class="flex size-10 items-center justify-center rounded-full bg-primary shadow-sm">
+<span class="material-symbols-outlined text-text-main text-[24px]">account_circle</span>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex flex-col gap-6 p-4">
+<!-- Hero Section: Video/Image Card -->
+<div class="relative w-full overflow-hidden rounded-lg shadow-heavy group">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+<!-- Simulated Video Background using Image -->
+<div class="bg-cover bg-center h-[420px] w-full transform transition-transform duration-700 group-hover:scale-105" data-alt="Happy kids laughing on a roller coaster ride with blue sky" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDUDQY3Ov19XjIO7xDc8TkOMGeOYWNjCRueOPa9aQ_UxY9inQttxtQkOXFYktIboI9Wo0ceRah2mOKos23_HvpdUrjDvNGdmejoDO5A8FwifWoDPDY2JCDZrlQK4aUTh8pDNX3mR_JH7sToX2IFVcEcjbtWMdpmTRJ0DQKOz9G0stlTjcuUXNsOyisko-37eZRS5PA2Vk4m8sjo9u3d9tq9T2enzxSL5_t8r7bZYudC2u4Dvg-mxrEaJQMufobUK8-cQyEdxbV6YEE");'>
+</div>
+<div class="absolute bottom-0 left-0 right-0 z-20 p-6 flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<span class="inline-block w-fit px-3 py-1 rounded-full bg-primary text-text-main text-xs font-bold uppercase tracking-wider mb-1">Live Park Cam</span>
+<h1 class="text-white tracking-tight text-3xl font-bold leading-[1.1] max-w-[300px]">Unleash the Fun!</h1>
+<p class="text-white/90 text-lg font-medium leading-normal">The ultimate day out for the whole family.</p>
+</div>
+<button class="flex w-full items-center justify-center gap-2 rounded-full h-12 px-6 bg-white text-text-main text-base font-bold leading-normal tracking-tight shadow-pop active:shadow-pop-hover active:translate-y-[3px] transition-all">
+<span class="material-symbols-outlined text-[20px]">play_circle</span>
+<span>Watch Video</span>
+</button>
+</div>
+</div>
+<!-- Announcement Chips -->
+<div class="flex overflow-x-auto no-scrollbar gap-3 -mx-4 px-4 pb-2">
+<div class="flex shrink-0 items-center gap-x-2 rounded-full bg-[#f4f4e6] dark:bg-white/10 border border-black/5 dark:border-white/10 pl-3 pr-4 py-2 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">star</span>
+<p class="text-text-main dark:text-white text-sm font-bold whitespace-nowrap">🎉 SHOWTIME: Magic Show @ 4PM</p>
+</div>
+<div class="flex shrink-0 items-center gap-x-2 rounded-full bg-white dark:bg-white/10 border border-black/5 dark:border-white/10 pl-3 pr-4 py-2 shadow-sm">
+<span class="material-symbols-outlined text-cyan-500 text-[20px]">water_drop</span>
+<p class="text-text-main dark:text-white text-sm font-medium whitespace-nowrap">Pools Open Late Today!</p>
+</div>
+</div>
+<!-- Zone Grid Section -->
+<div class="flex flex-col gap-4">
+<div class="flex items-end justify-between px-1">
+<h2 class="text-text-main dark:text-white tracking-tight text-2xl font-bold leading-tight">Explore Our Worlds</h2>
+<a class="text-text-muted dark:text-white/60 text-sm font-bold hover:text-primary transition-colors" href="#">See Map</a>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Water World -->
+<div class="group flex flex-col gap-3 p-3 bg-white dark:bg-[#2c2c15] rounded-lg shadow-heavy border-2 border-transparent hover:border-cyan-400 transition-all cursor-pointer active:scale-95 duration-200">
+<div class="w-full bg-center bg-cover h-32 rounded bg-cyan-100 relative overflow-hidden" data-alt="Colorful water slides and splashing water" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBX-Od9a3Jqqlp3-GBy3DZfKOkKk_XTWA5chYGQvb3370p1SD8gtDrzkErDIqslphYv628Z6doJtJt2g8R6geNQWUvK-r-9KKKZwuJvGEs0DhlnRL3zG31OSe8iQ3KKVkM-7TKLUkvQNvIUQBOcKzpBAyo5BZ8hmB2-8_A8QNZvUc4qFUE6t8QCXur-xhzJ5VuRgc5cKdYtoKMcPB7cMF8-PTwyayrEiQxalwkFOPMq0Qa9MwXC8G1Up5E15jxwlZfLg5OALgp4H7s");'>
+<div class="absolute top-2 right-2 bg-white/90 p-1.5 rounded-full shadow-sm text-cyan-600">
+<span class="material-symbols-outlined text-[18px] block">water_drop</span>
+</div>
+</div>
+<div>
+<p class="text-text-main dark:text-white text-lg font-bold leading-tight">Water World</p>
+<p class="text-text-muted dark:text-white/60 text-sm font-medium leading-normal mt-1">Splash &amp; Slide</p>
+</div>
+</div>
+<!-- Amusement Park -->
+<div class="group flex flex-col gap-3 p-3 bg-white dark:bg-[#2c2c15] rounded-lg shadow-heavy border-2 border-transparent hover:border-primary transition-all cursor-pointer active:scale-95 duration-200">
+<div class="w-full bg-center bg-cover h-32 rounded bg-yellow-100 relative overflow-hidden" data-alt="Ferris wheel and roller coaster loops against sunny sky" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDG6rpuW-QdSZxXlBAJ-61_a4vEKfIspCdxeTXT2Z9j5sLwit1I1D_iFXjoQdfGLJVaHI5xt_jZVo-PBwi89iuc9pI8XYxEkBjhMqmXUse5cKTrhUyFWH-QDqY3ZELsf83jMAbukxmEYo_scdf8mqVfPK-_Eqd7eZpr4H2uwejFHOcoCOqTpT8b1e-AFmEXaidna8WkZuv2OQwMTIIoUZ3CsX8RbF6I1UNNZ5jOKKBr5c2zDkP28asY0DA6NCXP0ltgMJ5ZURv3Zts");'>
+<div class="absolute top-2 right-2 bg-white/90 p-1.5 rounded-full shadow-sm text-yellow-600">
+<span class="material-symbols-outlined text-[18px] block">attractions</span>
+</div>
+</div>
+<div>
+<p class="text-text-main dark:text-white text-lg font-bold leading-tight">Amusement</p>
+<p class="text-text-muted dark:text-white/60 text-sm font-medium leading-normal mt-1">Thrills &amp; Spills</p>
+</div>
+</div>
+<!-- Snow World -->
+<div class="group flex flex-col gap-3 p-3 bg-white dark:bg-[#2c2c15] rounded-lg shadow-heavy border-2 border-transparent hover:border-blue-400 transition-all cursor-pointer active:scale-95 duration-200">
+<div class="w-full bg-center bg-cover h-32 rounded bg-blue-100 relative overflow-hidden" data-alt="Children playing in artificial snow indoor park" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC0yiKMml8oJte_6hNezLXGaUFWWMiu8NoJ5k24eSu-8XiJlnDsCZSOCL8w9UNgIDNIf7xJm-WalgApIczlxIgy3zZ6SywXUfeX-Y59_oN9okzW_Pe--dDWXjgrUyvnLVTkwaQ_utQydKFTqkDP_RyDXrQb5aILy9W6v_7HNBOfyZUyEFuIYjI3xWVRFvqC37LBh5kIZm8ZOJz34GKsCTQHM0rQteKaLfSqNuwVRP6T9JOvATCwMFSuJoJ4gieg7ATZ-K-_p1T4o2A");'>
+<div class="absolute top-2 right-2 bg-white/90 p-1.5 rounded-full shadow-sm text-blue-600">
+<span class="material-symbols-outlined text-[18px] block">ac_unit</span>
+</div>
+</div>
+<div>
+<p class="text-text-main dark:text-white text-lg font-bold leading-tight">Snow World</p>
+<p class="text-text-muted dark:text-white/60 text-sm font-medium leading-normal mt-1">Chill Out</p>
+</div>
+</div>
+<!-- Wow Experiences -->
+<div class="group flex flex-col gap-3 p-3 bg-white dark:bg-[#2c2c15] rounded-lg shadow-heavy border-2 border-transparent hover:border-purple-400 transition-all cursor-pointer active:scale-95 duration-200">
+<div class="w-full bg-center bg-cover h-32 rounded bg-purple-100 relative overflow-hidden" data-alt="Child wearing VR headset reaching out in wonder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBSbCuS-gpFrnswyGnBwxN9BSHjW9WkqI7LVhrd_ykxWH1kwEzYqPVVepkeIy9K7x0QasjLiEXAF7BmWu0ixTkgxzcnsFW9jx0U5sCLZL8e_4tb_pi4Inqq_kA95GmzP2zsTGG5geKe6cWuOsCvBhhA2VyE0RohrSXvbg52lIv1eohAV2i3yWCQ3cirYjSxOJJ4hDPuLyyhI-eAD3eGeGj8nR8rVBNXZuWea8up-zGGecWFR5LtFMLnGxbgJwdzokjqqIk1scxfpVM");'>
+<div class="absolute top-2 right-2 bg-white/90 p-1.5 rounded-full shadow-sm text-purple-600">
+<span class="material-symbols-outlined text-[18px] block">visibility</span>
+</div>
+</div>
+<div>
+<p class="text-text-main dark:text-white text-lg font-bold leading-tight">Wow Exp.</p>
+<p class="text-text-muted dark:text-white/60 text-sm font-medium leading-normal mt-1">Magic &amp; VR</p>
+</div>
+</div>
+</div>
+</div>
+<div class="h-8"></div> <!-- Spacer for scrolling past bottom content -->
+</main>
+<!-- Sticky 'Quick Book' Widget -->
+<div class="fixed bottom-6 left-4 right-4 z-50">
+<div class="bg-white dark:bg-[#2c2c15] border border-black/5 dark:border-white/10 rounded-full shadow-[0px_8px_20px_rgba(0,0,0,0.15)] p-2 pl-5 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold text-text-muted dark:text-white/60 tracking-wider">Next Slot</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-text-main dark:text-white text-[16px]">calendar_month</span>
+<span class="text-sm font-bold text-text-main dark:text-white">Today, 2 PM</span>
+</div>
+</div>
+<button class="bg-primary hover:bg-yellow-300 text-text-main h-10 px-5 rounded-full font-bold text-sm flex items-center gap-2 transition-colors shadow-sm active:scale-95">
+<span>Book Now</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>
